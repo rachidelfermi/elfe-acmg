@@ -9,6 +9,7 @@ dist/
 .env
 .env.*
 !.env.example
-.idea/
-.vscode/
-*.log
+adaptive_*/
+/pvs1/
+/ps2pm6/
+/ps2_pm6/
