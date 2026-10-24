@@ -1,0 +1,13 @@
+# PP2 source-to-rule matrix
+
+Checked 2026-10-23. Only the scopes below are pinned in code. The evaluator does not claim complete VCEP registry coverage.
+
+| Source and version | Scope/pathway | Minimum sufficient evidence | Strength | Exclusions and unsupported situations |
+| --- | --- | --- | --- | --- |
+| [Richards et al., ACMG/AMP 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4544753/) | General PP2 | Qualifying missense candidate on a relevant transcript; valid gene–disease association; independently curated, disease-matched assertions that missense is a common disease mechanism and benign missense variation is uncommon | Supporting | Nonmissense, invalid association, mismatched transcript, contrary or conflicting primary assessments. Raw counts, fractions and constraint do not establish the two assertions automatically; no universal numeric cutoff is supplied by this rule. |
+| [ClinGen Congenital Myopathies VCEP ACTA1 v2.0](https://cspec.clinicalgenome.org/cspec/ui/svi/doc/GN147) | ACTA1, MONDO:0100084, autosomal dominant alpha-actinopathy, NM_001100.4 | Qualifying missense candidate; valid association and relevant pinned transcript; autosomal dominant disease context. The VCEP has already established gene-level PP2 eligibility. | Supporting | Recessive context or wrong transcript does not meet this scoped pathway. The VCEP cites gnomAD v4.1 z=6.09 as part of its gene-level determination; the evaluator does not use 6.09 as a variant threshold. |
+| [ClinGen DICER1 VCEP v1.4](https://cspec.clinicalgenome.org/cspec/ui/svi/doc/GN024) | DICER1, MONDO:0100216 | Gene and disease scope alone identifies the prohibition | None | PP2 is not applicable despite missense constraint z=4.23; the VCEP cites benign/likely benign missense variants. |
+
+The [ClinGen Variant Classification Guidance](https://clinicalgenome.org/working-groups/sequence-variant-interpretation/) page identifies VCEP CSpec specifications and notes that the SVI working group retired in April 2025. The [VCEP overview](https://pmc.ncbi.nlm.nih.gov/articles/PMC6885382/) cautions against using missense constraint alone to determine PP2 applicability. No general SVI PP2 strength upgrade is implemented. PP3, PM1, and PM2 overlap is reported as provenance only; this evaluator never reuses those criteria as PP2 evidence or adjusts their strengths.
+
+The tests use synthetic evidence, including synthetic gene `TEST1`; they are decision logic checks, not validated variant classifications. No population data, ClinVar records, transcript annotations, or VCEP updates are fetched. For unpinned genes, users must provide curated disease-specific primary assessments and should independently check for applicable current VCEP rules before clinical use.

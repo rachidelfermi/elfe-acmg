@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adaptive-acmg-evidence"
+version = "0.1.0"
+description = "Evidence-adaptive ACMG/ClinGen criterion evaluators"
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Adaptive ACMG engine contributors"}]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+include = ["acmg*", "adaptive_*", "pvs1*", "ps2pm6*", "ps2_pm6*"]
+exclude = ["tests*", "build*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests"]
+
+[tool.unittest]
+start-directory = "tests"
